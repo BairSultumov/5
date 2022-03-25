@@ -8,11 +8,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 const multer = require("multer")
 const upload = multer();
 
-app.engine("hbs", expressHbs.engine({
-    layoutsDir: "views/layouts",
-    defaultLayout: "layout",
-    extname: "hbs"
-}))
+app.set("view options", { layout: "layouts/layout" });
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 
