@@ -30,10 +30,8 @@ app.post("/getData", upload.fields([]), (request, response) => {
 
 var table = `<tr>`
 for (let i = 0; i < arr.length; i++) {
-    table +=`<td> ${arr[i]}</td>`;
-    if(arr.length/2==i){
-        table+='</tr><tr>'
-    }
+    table += `<td>${arr[i]}</td>`;
+    if (arr.length / 2 == i) table += '</tr><tr>'
 }
 table += '</tr>'
 
