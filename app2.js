@@ -12,11 +12,11 @@ app.set("view options", { layout: "layouts/layout" });
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 
-app.use("/main", urlencodedParser, function (request, response) {
+app.get("/main", urlencodedParser, function (request, response) {
     response.render("main2.hbs");
 });
 
-app.use("/", urlencodedParser, function (request, response) {
+app.get("/", urlencodedParser, function (request, response) {
     response.redirect("/main");
 });
 
