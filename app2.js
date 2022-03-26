@@ -20,7 +20,7 @@ app.get("/", urlencodedParser, function (request, response) {
     response.redirect("/main");
 });
 
-var arr = new Array("Название 1", "15", "2", "Название 2", "10", "3");
+var arr = new Array("Название 1", "25", "2", "Название 2", "30", "3");
 
 app.post("/getData", upload.fields([]), (request, response) => {
     if (!request.body)
@@ -31,7 +31,7 @@ app.post("/getData", upload.fields([]), (request, response) => {
 var table = `<tr>`
 for (let i = 0; i < arr.length; i++) {
     table += `<td>${arr[i]}</td>`;
-    if (arr.length / 2 == i) table += '</tr><tr>'
+    if (arr.length / 2 == i+1) table += '</tr><tr>'
 }
 table += '</tr>'
 
